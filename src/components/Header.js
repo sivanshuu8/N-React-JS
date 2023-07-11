@@ -8,7 +8,7 @@ const Header = () =>{
         </div>
         <div className='nav-items'>
             <ul>
-                <li>Home</li>
+                <li onClick={() => window.location.reload()}>Home</li>
                 <li>About Us</li>
                 <li>Contact</li>
                 <li>Cart</li>
