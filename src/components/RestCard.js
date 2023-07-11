@@ -2,7 +2,7 @@ import {restURL} from '../utils/constants';
 
 const RestCard = (props) => {
     const {restData} = props;
-    const {name, cloudinaryImageId, cuisines, avgRating, costForTwo, distance} = restData?.data;
+    const {name, cloudinaryImageId, cuisines, avgRating, costForTwo, distance, area} = restData?.data;
 
     return(
         <div className='rest-card'>
@@ -11,7 +11,7 @@ const RestCard = (props) => {
             alt="Meghna Food" 
             src={ restURL + cloudinaryImageId} 
             />
-            <h2 className='rest-name'>{name}</h2>
+            <h2 className='rest-name'>{name}, {area}</h2>
             <h4>{cuisines.join(', ')}</h4>
             <h4>{avgRating} stars</h4>
             <h4>{distance}</h4>

@@ -1,7 +1,8 @@
 .header {
+  position: sticky;
   display: flex;
   justify-content: space-between;
-  border: 1px solid black;
+  border: 1px solid purple;
 }
 
 .logo-img {
@@ -27,7 +28,7 @@
 
 .rest-card {
   width: 240px;
-  background-color: rgba(211, 211, 211, 0.4);
+  /* background-color: rgba(211, 211, 211, 0.4); */
   padding: 10px;
   margin: 20px;
 }
@@ -35,9 +36,6 @@
 .rest-card:hover {
   cursor: pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.search {
-  padding: 10px;
 }
 
 .rest-logo {
@@ -49,9 +47,71 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+.shimmer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.filter-btn,
+.price-filter {
+  padding: 5px 10px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  /* background: #3879fa; */
+  /* background: "#112766"; */
+  background: purple;
+  color: #fff;
+  text-align: center;
+  font-family: Roboto;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.06px;
+  border: none;
 }
 
 /* .rest-name {
   align-self: center;
 } */
+
+.shimmer-card {
+  width: 240px;
+  height: 250px;
+  background-color: rgba(211, 211, 211, 0.4);
+  padding: 10px;
+  margin: 20px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+  padding: 20px;
+}
+
+.search-bar {
+  height: 25px;
+  width: 200px;
+  margin-right: 2px;
+  border: 1px solid purple;
+  border-radius: 3px;
+}
+.search-btn {
+  cursor: pointer;
+  border-radius: 3px;
+  /* background: #3879fa; */
+  background: purple;
+  color: #fff;
+  text-align: center;
+  border: none;
+}
+
+.filter {
+  display: flex;
+}
