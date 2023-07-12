@@ -1,5 +1,6 @@
 .header {
   position: sticky;
+  top: 0;
   display: flex;
   justify-content: space-between;
   border: 1px solid purple;
@@ -118,4 +119,25 @@
 
 .filter {
   display: flex;
+}
+.new-container {
+  height: calc(100vh - 500px);
+  margin: 100px auto;
+  width: 70%;
+  background-color: purple;
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 5px 5px 15px rgba(128, 0, 128, 0.6);
+}
+
+.new-header {
+  text-align: center;
+  margin: 30px;
+}
+
+.new-content {
+  margin: 10px 50px;
+  font-weight: 300;
+  font-family: "roborto", "sans-sarif";
 }
