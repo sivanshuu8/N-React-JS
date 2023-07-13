@@ -4,3 +4,5 @@ export const logoURL =
 export const restURL =
 "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/";
 
+export const menuURL = "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=26.1756772&lng=91.7417143&restaurantId="
+

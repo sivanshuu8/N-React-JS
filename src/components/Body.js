@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import RestCard from './RestCard'
 import Shimmer from './Shimmer';
 // import restList from '../utils/mockData';
@@ -19,8 +20,10 @@ const Body = () => {
     const json = await data.json();
     setListOfRest(json?.data?.cards[2]?.data?.data?.cards);
     setFilteredRest(json?.data?.cards[2]?.data?.data?.cards);
-    console.log(json);
+
   };
+
+
 
     // condition rendering
     // if(listOfRest.length === 0){
@@ -57,7 +60,7 @@ const Body = () => {
             </div>
             <div className='rest-container'>
                {
-                filteredRest.map(restaurant => <RestCard key={restaurant.data.id} restData={restaurant} />)
+                filteredRest.map(restaurant => <Link className='rest-cards' key={restaurant.data.id} to={'/restaurants/'+ restaurant.data.id}><RestCard  restData={restaurant} /></Link>)
                }
             </div>
         </div>

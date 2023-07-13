@@ -8,7 +8,7 @@ const RestCard = (props) => {
         <div className='rest-card'>
             <img 
             className='rest-logo'
-            alt="Meghna Food" 
+            alt="Restaurant Food Image" 
             src={ restURL + cloudinaryImageId} 
             />
             <h2 className='rest-name'>{name}, {area}</h2>
