@@ -3,9 +3,12 @@ import RestCard from './RestCard'
 import Shimmer from './Shimmer';
 // import restList from '../utils/mockData';
 import { useState, useEffect } from 'react';
+import useOnlineStatus from '../utils/useOnlineStatus';
 
 
 const Body = () => {
+
+  
 
   const [listOfRest, setListOfRest] = useState([]);
   const [filteredRest, setFilteredRest] = useState([]);
@@ -30,6 +33,17 @@ const Body = () => {
     //   // return <h1>Loading....</h1>
     //   return(<Shimmer />)
     // }
+  
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false){
+      return(
+        <div className='new-container'>
+          <h2 className='new-content'>Seems like you are offline, please check your internet connection</h2>
+        </div>
+      )
+    }
+  
 
     return listOfRest.length === 0 ? <Shimmer /> : (
         <div className='body'>

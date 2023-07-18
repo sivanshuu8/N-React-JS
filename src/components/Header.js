@@ -1,7 +1,10 @@
 import { logoURL } from "../utils/constants";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () =>{
+    
+    const onlineStatus = useOnlineStatus();
     return(
         <div className='header'>
             <div className='logo-container'>
@@ -18,6 +21,7 @@ const Header = () =>{
                 <li>
                     <Link to='/contacts' className="header-routes">Contact</Link>
                     </li>
+                    <li>{onlineStatus ? "🟢" : "🔴"}</li>
                 <li>Cart</li>
             </ul>
         </div>
