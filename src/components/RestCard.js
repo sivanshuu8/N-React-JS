@@ -5,13 +5,13 @@ const RestCard = (props) => {
     const {name, cloudinaryImageId, cuisines, avgRating, costForTwo, distance, area} = restData?.data;
 
     return(
-        <div className='rest-card'>
+        <div className='rest-card m-4 p-4 w-[250px] rounded-lg hover:shadow-lg bg-gray-50 hover:bg-gray-100'>
             <img 
-            className='rest-logo'
+            className='rest-logo rounded-lg h-30 w-50'
             alt="Restaurant Food Image" 
             src={ restURL + cloudinaryImageId} 
             />
-            <h2 className='rest-texts'>{name}, {area}</h2>
+            <h2 className='rest-texts font-bold text-xl py-4'>{name}, {area}</h2>
             <h4 className='rest-texts'>{cuisines.join(', ')}</h4>
             <h4 className='rest-texts'>{avgRating} stars</h4>
             <h4 className='rest-texts'>{distance}</h4>

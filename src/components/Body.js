@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import useOnlineStatus from '../utils/useOnlineStatus';
 
 
+
 const Body = () => {
 
   
@@ -47,10 +48,10 @@ const Body = () => {
 
     return listOfRest.length === 0 ? <Shimmer /> : (
         <div className='body'>
-            <div className="filter">
-              <div className='search'>
-                <input type='text' className='search-bar' placeholder='Search restaraunts...' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
-                <button className='search-btn' onClick={() => {
+            <div className="filter flex items-center">
+              <div className='search p-4 m-4 flex items-center'>
+                <input type='text' className='p-2 search-bar border border-solid border-black' placeholder='Search restaraunts...' value={searchText} onChange={(e) => setSearchText(e.target.value)}/>
+                <button className='search-btn bg-purple-800 px-4 h-10 m-4 border border-purple-900 rounded-md' onClick={() => {
                     const filteredSearch = listOfRest.filter((res) => res.data.name.toLocaleLowerCase().includes(searchText.toLocaleLowerCase()))
                     setFilteredRest(filteredSearch);
                 }}>
@@ -60,19 +61,19 @@ const Body = () => {
 
                 </button>
               </div>
-              <button className='filter-btn' onClick={() => {
+              <button className='filter-btn bg-purple-800 border border-bg-purple-900 px-4 h-10 m-4 text-white rounded-md' onClick={() => {
                 setFilteredRest(listOfRest);
                const filteredList = listOfRest.filter((res) => res.data.avgRating >= 4);
                setFilteredRest(filteredList);
               }}
               >Top Rated Restaurants</button>
-              <button className='price-filter' onClick={(res) => {
+              <button className='price-filter  bg-purple-800 border border-bg-purple-900 px-4 m-4 h-10 text-white rounded-md' onClick={(res) => {
                 setFilteredRest(listOfRest);
                 const priceFilter = listOfRest.filter((res) => (res.data.costForTwo/100) <= 300);
                 setFilteredRest(priceFilter);
               }}>Budget Restaurants</button>
             </div>
-            <div className='rest-container'>
+            <div className='rest-container flex flex-wrap justify-between'>
                {
                 filteredRest.map(restaurant => <Link className='rest-cards' key={restaurant.data.id} to={'/restaurants/'+ restaurant.data.id}><RestCard  restData={restaurant} /></Link>)
                }
